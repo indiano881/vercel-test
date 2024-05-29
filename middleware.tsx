@@ -1,12 +1,12 @@
 //middleware invoked for every route in your project
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
  
 let locales = ['en-US', 'se-SE', 'se']
  
 // Get the preferred locale, similar to the above or using a library
-function getLocale(request) { ... }
+function getLocale(request: NextRequest) { ... }
  
-export function middleware(request) {
+export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
   const pathnameHasLocale = locales.some(
